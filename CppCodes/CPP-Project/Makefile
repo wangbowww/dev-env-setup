@@ -1,5 +1,5 @@
 # Makefile for a multi-file C++ project
-# 使用 CMake 构建和管理 C++ 项目
+# Build and manage the C++ project with CMake.
 
 
 .PHONY: build run clear all debug

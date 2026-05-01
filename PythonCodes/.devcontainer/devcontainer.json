@@ -5,9 +5,10 @@
         "--gpus",
         "all"
     ],
-    "mounts": [
-        "source=D:\\Codes\\DATA,target=/root/DATA,type=bind"
-    ],
+    // maybe mount the data folder to the container for easy access or storage
+    // "mounts": [
+    //     "source=D:\\Codes\\DATA,target=/root/DATA,type=bind"
+    // ],
     "workspaceFolder": "/root/Codes",
     "workspaceMount": "source=${localWorkspaceFolder},target=/root/Codes,type=bind",
     "customizations": {
@@ -21,6 +22,5 @@
             ]
         }
     },
-    "remoteUser": "root",
-    "postCreateCommand": "bash -c 'source /opt/conda/etc/profile.d/conda.sh'"
+    "remoteUser": "root"
 }

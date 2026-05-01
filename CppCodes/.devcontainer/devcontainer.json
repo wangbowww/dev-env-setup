@@ -1,9 +1,10 @@
 {
     "name": "C++ Dev",
     "image": "keepalivewww/cpp-dev:latest",
-    "mounts": [
-        "source=D:\\Codes\\DATA,target=/root/DATA,type=bind"
-    ],
+    // maybe mount the data folder to the container for easy access or storage
+    // "mounts": [
+    //     "source=D:\\Codes\\DATA,target=/root/DATA,type=bind"
+    // ],
     "workspaceFolder": "/root/Codes",
     "workspaceMount": "source=${localWorkspaceFolder},target=/root/Codes,type=bind",
     "customizations": {

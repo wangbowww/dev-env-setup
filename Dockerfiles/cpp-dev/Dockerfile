@@ -2,7 +2,7 @@ FROM keepalivewww/cpp-dev:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Linux开发工具
+# Linux development tools
 RUN apt-get update && apt-get install -y \
     git \
     curl \

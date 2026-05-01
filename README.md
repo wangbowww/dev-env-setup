@@ -47,17 +47,7 @@ linux-dev-envs/
 
 Path: `Dockerfiles/cpp-dev/Dockerfile`
 
-Base image: `keepalivewww/cpp-dev:latest`
-
-Additional tools installed:
-
-- `git`
-- `curl`
-- `wget`
-- `vim`
-- `htop`
-- `build-essential`
-- `ca-certificates`
+Base image: `keepalivewww/cpp-dev:latest`, from microsoft
 
 It also configures a Bash prompt with Git branch display. The default working directory is `/root/Codes`.
 
@@ -67,19 +57,7 @@ Path: `Dockerfiles/pytorch-dev/Dockerfile`
 
 Base image: `keepalivewww/pytorch-dev:latest`
 
-In addition to the basic development tools, it installs these common Python packages:
-
-- `numpy`
-- `pandas`
-- `matplotlib`
-- `scikit-learn`
-- `ipython`
-- `jupyter`
-- `debugpy`
-- `tqdm`
-- `transformers`
-- `datasets`
-- `einops`
+The base image already includes `conda`. 
 
 It also configures a Bash prompt with Git branch display. The default working directory is `/root/Codes`.
 

@@ -19,7 +19,7 @@
                     "ignoreFailures": true
                 }
             ],
-            // "preLaunchTask": "build", // 假定用户已在终端编译
+            // "preLaunchTask": "build", // Assume the user has already built it in the terminal.
             "miDebuggerPath": "/usr/bin/gdb"
         }
     ]

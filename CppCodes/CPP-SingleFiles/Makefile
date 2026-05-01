@@ -1,7 +1,7 @@
 # Makefile for test
-# 使用 CMake 构建和管理 C++ 项目
+# Build and manage the C++ project with CMake.
 
-# 用法：
+# Usage:
 # make build a
 # make debug b
 # make run a
@@ -31,6 +31,6 @@ clear:
 
 all: build run clear
 
-# 吞掉如 make run a 中的 a，避免被当成未知目标报错
+# Swallow targets such as "a" in "make run a" so they are not treated as unknown targets.
 %:
 	@:
