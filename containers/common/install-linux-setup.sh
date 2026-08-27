@@ -40,7 +40,7 @@ bash "$DOTFILES_DIR/install-vim.sh"
 
 cat >> "$HOME/.zshrc.local" <<'EOF'
 
-# personal-dev-setup: uv managed storage
+# personal-dev-envs: uv managed storage
 export UV_CACHE_DIR="$HOME/Toolchains/uv/cache"
 export UV_PYTHON_CACHE_DIR="$HOME/Toolchains/uv/cache/python"
 export UV_CREDENTIALS_DIR="$HOME/Toolchains/uv/credentials"

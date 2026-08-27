@@ -1,4 +1,4 @@
-# personal-dev-setup
+# personal-dev-envs
 
 我的个人开发环境安装与配置手册。仓库提供三条明确的 setup 路线：macOS 宿主机、Linux 宿主机和 Linux 容器。
 
@@ -45,7 +45,7 @@
 ## 仓库结构
 
 ```text
-personal-dev-setup/
+personal-dev-envs/
 ├── README.md
 ├── setups/
 │   ├── macos/       # macOS 从零安装路线
@@ -61,8 +61,6 @@ personal-dev-setup/
     ├── dotfiles/    # dotfiles 边界与审阅说明
     └── containers/  # 容器设计说明
 ```
-
-仓库远端目前仍叫 `linux-dev-envs`；是否重命名不影响文档路线，留到后续单独决定。
 
 ## 执行原则
 
