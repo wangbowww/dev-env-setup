@@ -40,7 +40,7 @@ devcontainer 使用 `build.dockerfile` 和仓库根目录 build context，保证
 - C/C++ 和 Go 固定 Debian `bookworm`，避免无意切换发行版。
 - Go 固定语言版本 1.26，但现有 Go 辅助工具仍使用 `@latest`，后续应逐个决定是否锁版本。
 - PyTorch 保留已有的 2.8/CUDA 12.8 组合，改用官方公开镜像；镜像只有 `linux/amd64`，且需要 NVIDIA Container Toolkit。
-- dotfiles 固定到 commit `c51f5edec824176f660456084b348b5807cc69ad`；审阅独立仓库更新后，再显式更新 Dockerfile 参数。
+- dotfiles 固定到 commit `6c96fde573093fa670ecb74e0ab298caef208188`；审阅独立仓库更新后，再显式更新 Dockerfile 参数。
 - uv 安装脚本和 Python 3.13 patch release 当前未锁 digest/patch，后续可以单独决定更严格的可复现策略。
 - 当前 Mac 没有可用 Docker CLI，因此本轮只能静态验证 Dockerfile、脚本和 devcontainer 配置，仍需在实际容器运行时上构建验收。
 

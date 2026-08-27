@@ -15,7 +15,7 @@ ENV UV_INSTALL_DIR=/root/Toolchains/uv/bin \
     PERSONAL_DEV_PROFILE=pytorch \
     PATH=/root/Toolchains/uv/bin:/opt/conda/bin:${PATH}
 
-ARG DOTFILES_REF=c51f5edec824176f660456084b348b5807cc69ad
+ARG DOTFILES_REF=6c96fde573093fa670ecb74e0ab298caef208188
 ARG PYTHON_VERSION=3.13
 
 COPY containers/common/install-linux-setup.sh /tmp/install-linux-setup.sh

@@ -1,6 +1,6 @@
-# dotfiles 边界与审阅入口
+# dotfiles 边界
 
-dotfiles 的内容继续在独立仓库中单独审阅，但安装时机已经进入 macOS 和 Linux 的正式 setup 路线：完成 GitHub SSH 后、配置 signing 与 uv 前。
+dotfiles 是完全独立的仓库。它不知道也不依赖 `dev-env-setup`；依赖只存在于本仓库这一侧。本仓库负责决定何时安装 dotfiles，具体配置和安装行为始终以 dotfiles 自己的 README 与脚本为准。
 
 ## 仓库边界
 
@@ -21,20 +21,26 @@ dotfiles 的内容继续在独立仓库中单独审阅，但安装时机已经�
 
 本仓库负责说明何时需要 dotfiles，以及它依赖哪些已经安装的软件；不复制 `.zshrc` 或 `.vimrc` 内容。
 
-## 已发现的待审阅项
+## 当前已确认的行为
 
-1. dotfiles README 要求运行 `./install.sh`，但仓库中实际只有 `install-zsh.sh` 与 `install-vim.sh`。
-2. 两个安装脚本会删除并覆盖现有 `~/.zshrc` 或 `~/.vimrc`，尚未提供备份或 dry-run。
-3. Oh My Zsh 安装使用下载后直接执行的远程脚本，需要确认信任与失败恢复方式。
-4. `~/.zshrc.local` 适合保存 uv 路径和机器私有代理，但应明确哪些变量属于通用配置。
-5. Homebrew 的 `brew shellenv` 当前计划写入 `~/.zprofile`，需要确认 dotfiles 是否也要管理该文件。
-6. macOS 与 Linux 是否共享同一套安装流程，需要分别验证。
+- README 分别给出 `install-zsh.sh` 与 `install-vim.sh` 的审阅、安装和验证顺序。
+- `.zshrc` 与 `.vimrc` 复制到 Home，不使用符号链接。
+- 不同的已有目标文件会先移动为带时间戳的备份，再安装新文件。
+- 相同目标文件会跳过复制，不创建重复备份。
+- `~/.zshrc.local` 只在不存在时创建，已有文件不会被覆盖。
+- Oh My Zsh 和插件直接通过 Git 克隆，不执行下载得到的远程安装脚本。
+- 安装脚本已使用隔离 Home 验证备份、复制、权限和重复执行行为，并通过当前 macOS 自带 Bash 3.2 的语法与运行测试。
+
+## 仍需在实际环境验收
+
+- 在全新 macOS 主机上按 README 从克隆开始完整执行。
+- 在全新 Debian/Ubuntu 主机上完整执行。
+- Homebrew 的 `brew shellenv` 继续由 `~/.zprofile` 管理，是否纳入 dotfiles 留待以后单独决定。
+- Oh My Zsh 和插件当前跟随克隆时的最新 commit；是否固定版本需要单独审阅。
 
 ## 本仓库的边界
 
 - 宿主机路线只链接到独立仓库，不复制或自动执行 dotfiles。
-- Linux 容器构建会拉取经过明确固定的 dotfiles commit，使容器创建后可以直接使用。
+- Linux 容器构建会由本仓库拉取经过明确固定的 dotfiles commit，使容器创建后可以直接使用。
 - 不修改独立 dotfiles 仓库。
 - 不把本机现有 `.zshrc.local` 的私有内容复制进文档。
-
-审阅时应逐文件确认，再补充正式安装顺序和安全的迁移步骤。

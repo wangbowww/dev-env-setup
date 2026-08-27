@@ -2,7 +2,9 @@
 
 完成 GitHub SSH 认证后，进入独立的 [dotfiles 仓库](https://github.com/wangbowww/dotfiles)，按照该仓库的 README 审阅并安装 Zsh、Vim 和机器本地配置入口。
 
-dotfiles 仓库是这些文件的唯一来源；本仓库不复制 `.zshrc`、`.vimrc` 或安装脚本。安装前应先确认脚本对已有配置文件的处理方式。
+dotfiles 仓库本身不限定存放位置；本路线按个人目录约定放在 `~/Codes/dotfiles`，执行 README 命令时相应替换示例路径。dotfiles 是配置及安装行为的唯一来源，本仓库不复制 `.zshrc`、`.vimrc` 或安装脚本。
+
+安装脚本会把配置复制到 Home。目标文件内容不同时会先创建带时间戳的备份；`~/.zshrc.local` 已存在时不会被覆盖。
 
 ## 完成标准
 
