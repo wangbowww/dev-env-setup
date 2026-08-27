@@ -1,0 +1,24 @@
+{
+    "name": "Personal C++ Dev",
+    "build": {
+        "dockerfile": "../Dockerfile",
+        "context": "../../.."
+    },
+    "workspaceFolder": "/root/Codes",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/root/Codes,type=bind",
+    "mounts": [
+        "source=${localEnv:HOME}/.ssh/github-key.pub,target=/root/.ssh/github-key.pub,type=bind,readonly"
+    ],
+    "postStartCommand": "git config --global gpg.format ssh && git config --global user.signingkey /root/.ssh/github-key.pub",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "github.vscode-github-actions",
+                "openai.chatgpt",
+                "tomoki1207.pdf",
+                "ms-vscode.cpptools"
+            ]
+        }
+    },
+    "remoteUser": "root"
+}
