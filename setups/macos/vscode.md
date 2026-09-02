@@ -40,6 +40,7 @@ code .
 | --- | --- |
 | Codex | `openai.chatgpt`、`martinortiz.codex-stats` |
 | Python / Jupyter | `ms-python.python`、`ms-python.vscode-pylance`、`ms-python.debugpy`、`ms-python.vscode-python-envs`、`ms-toolsai.jupyter-keymap` |
+| C++ | `llvm-vs-code-extensions.vscode-clangd`、`ms-vscode.cmake-tools`、`vadimcn.vscode-lldb` |
 | Remote Development | `ms-vscode-remote.remote-ssh`、`ms-vscode-remote.remote-ssh-edit`、`ms-vscode-remote.vscode-remote-extensionpack`、`ms-vscode.remote-explorer`、`ms-vscode.remote-server` |
 | Containers | `ms-vscode-remote.remote-containers`、`ms-azuretools.vscode-containers` |
 | GitHub | `github.remotehub`、`github.vscode-github-actions`、`ms-vscode.remote-repositories` |
@@ -52,6 +53,14 @@ while IFS= read -r extension_id; do
   code --install-extension "$extension_id"
 done < setups/shared/vscode-extensions.txt
 ```
+
+当前 CMake Tools 还会将 `ms-vscode.cpp-devtools` 作为 extension pack 内容自动安装；它不是这套个人配置主动选择的 C++ 扩展。完成清单安装后检查并移除它：
+
+```bash
+code --uninstall-extension ms-vscode.cpp-devtools
+```
+
+移除 extension pack 内容不会卸载 CMake Tools。本配置继续由 clangd 提供 C++ 语言服务。
 
 重复执行不会有意安装第二份扩展。安装完成后比较实际状态和基线：
 

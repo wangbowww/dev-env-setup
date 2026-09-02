@@ -9,6 +9,7 @@
 - 代码目录：`~/Codes`
 - 工具链目录：`~/Toolchains`
 - Python：uv 管理，数据位于 `~/Toolchains/uv`
+- C++：Homebrew LLVM + CMake + Ninja
 - 编辑器：VS Code 官方 DMG + 已确认扩展清单 + Settings Sync
 - Shell 配置：在 GitHub SSH 之后按独立 dotfiles 仓库安装
 
@@ -21,7 +22,8 @@
 5. [dotfiles](dotfiles.md)
 6. [GitHub SSH 提交签名](github-signing.md)
 7. [uv 与 Python](uv-python.md)
-8. [Visual Studio Code](vscode.md)
+8. [C++](cpp.md)
+9. [Visual Studio Code](vscode.md)
 
 每完成一页的“完成标准”再进入下一页。dotfiles 的内容仍在独立仓库审阅，但它现在是正式路线中的前置步骤。
 

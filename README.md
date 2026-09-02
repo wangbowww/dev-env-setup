@@ -25,7 +25,8 @@
 | 5 | [dotfiles](setups/macos/dotfiles.md) | [dotfiles](setups/linux/dotfiles.md) |
 | 6 | [GitHub SSH 提交签名](setups/macos/github-signing.md) | [GitHub SSH 提交签名](setups/linux/github-signing.md) |
 | 7 | [uv 与 Python](setups/macos/uv-python.md) | [uv 与 Python](setups/linux/uv-python.md) |
-| 8 | [Visual Studio Code](setups/macos/vscode.md) | [Visual Studio Code（仅桌面 Linux）](setups/linux/vscode.md) |
+| 8 | [C++](setups/macos/cpp.md) | — |
+| 9 | [Visual Studio Code](setups/macos/vscode.md) | [Visual Studio Code（仅桌面 Linux）](setups/linux/vscode.md) |
 
 无桌面的远程 Linux 服务器一般在第 7 步结束，不应为了完成清单而安装 GUI。选择容器开发时直接遵循第三条 [Linux 容器路线](setups/container/README.md)，不需要先完成 Linux 宿主机路线再进入容器重做一次。
 
@@ -37,6 +38,7 @@
 - 同一个 GitHub SSH 公钥分别注册为 Authentication Key 和 Signing Key。
 - Python 由 uv 管理，数据集中在 `~/Toolchains/uv`。
 - 项目创建和依赖管理使用同一份 [uv 常用命令速查](setups/shared/uv-command-reference.md)。
+- macOS C++ 使用 Homebrew LLVM、CMake 和 Ninja；项目模板与环境 setup 分开维护。
 - macOS/Linux 宿主机使用同一份 [VS Code 扩展基线](setups/shared/vscode-extensions.txt)。
 - devcontainer 只安装当前语言和容器工作区真正需要的扩展，不照搬宿主机清单。
 - VS Code User Settings 通过账户同步，不提交到本仓库。
